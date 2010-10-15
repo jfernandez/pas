@@ -1,15 +1,11 @@
 require 'active_resource'
+require 'active_support'
 require 'openssl'
 require 'base64'
+require 'pas/resource'
+require 'pas/member'
 
 class PAS
-  
-  attr_reader :api_access_key
-  attr_reader :api_token
-  
-  def initialize(api_access_key, api_token)
-    @api_access_key = api_access_key
-    @api_token      = api_token
-  end
-  
+  cattr_accessor :api_access_key
+  cattr_accessor :api_token
 end
