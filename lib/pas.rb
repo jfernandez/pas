@@ -1,13 +1,22 @@
-require 'active_resource'
-require 'active_support'
-require 'openssl'
-require 'base64'
-require 'pas/version'
-require 'pas/resource'
-require 'pas/member'
-require 'pas/member_tracker'
+module PAS
+  require 'active_resource'
+  require 'active_support'
+  require 'openssl'
+  require 'base64'
 
-class PAS
-  cattr_accessor :api_access_key
-  cattr_accessor :api_token
+  autoload :Resource,       'pas/resource'
+  autoload :Member,         'pas/member'
+  autoload :MemberTracker,  'pas/member_tracker'
+  
+  class << self
+    
+    def config
+      @config ||= {
+        :api_access_key => "",
+        :api_token      => "",
+        :domain_name    => "https://publisher.pokeraffiliatesolutions.com/"
+      }
+    end
+    
+  end
 end

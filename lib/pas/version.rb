@@ -1,3 +1,3 @@
-class PAS
+module PAS
   VERSION = "0.0.1"
 end
