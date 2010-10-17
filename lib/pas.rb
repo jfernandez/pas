@@ -4,6 +4,7 @@ module PAS
   require 'openssl'
   require 'base64'
 
+  autoload :Connection,     'pas/connection'
   autoload :Resource,       'pas/resource'
   autoload :Member,         'pas/member'
   autoload :MemberTracker,  'pas/member_tracker'
