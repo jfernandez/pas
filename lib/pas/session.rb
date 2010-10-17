@@ -1,6 +1,6 @@
 module PAS
-  class MemberTracker < PAS::Resource
-    self.collection_name  = "publisher_member_trackers"
+  class Session < PAS::Resource
+    self.collection_name  = "member_remote_sessions"
     
     class << self
       def delete(*args)
@@ -9,6 +9,10 @@ module PAS
     end
     
     def destroy
+      raise PAS::DisabledMethodError
+    end
+    
+    def update
       raise PAS::DisabledMethodError
     end
   end

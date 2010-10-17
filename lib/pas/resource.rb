@@ -3,7 +3,6 @@ module PAS
     self.site = PAS.config[:domain_name]
     
     class << self
-  
       def connection(refresh = false)
         if defined?(@connection) || superclass == Object
           @connection = PAS::Connection.new(site, format) if refresh || @connection.nil?
@@ -15,7 +14,6 @@ module PAS
           superclass.connection
         end
       end
-      
     end
   end
 end
